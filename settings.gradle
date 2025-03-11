@@ -1,0 +1,6 @@
+rootProject.name = 'lsp4'
+include('app')
+
+// Ensure that Gradle is aware of the libs directory in the root
+file('libs').mkdir() // This line ensures the libs directory is included properly
+

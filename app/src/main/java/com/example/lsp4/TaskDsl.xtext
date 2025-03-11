@@ -1,0 +1,22 @@
+grammar com.example.TaskDsl with org.eclipse.xtext.common.Terminals
+
+generate taskDsl "http://www.example.com/TaskDsl"
+
+Model:
+    tasks+=Task*;
+
+Task:
+    'task' name=STRING '{'
+        description=Description
+        priority=Priority
+        due=Date
+    '}';
+
+Description:
+    'description' value=STRING;
+
+Priority:
+    'priority' value=('low' | 'medium' | 'high');
+
+Date:
+    'due' date=STRING;
